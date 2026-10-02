@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FixItProof — Know What's Wrong Before You Pay</title>
+  <meta name="description" content="FixItProof helps drivers understand car problems, repair urgency, and potential repair costs before visiting a shop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">✓</span>
+      <span>FixIt<span>Proof</span></span>
+    </a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <button class="nav-btn" onclick="document.querySelector('#diagnose').scrollIntoView({behavior:'smooth'})">Start Diagnosis</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Smarter car problem analysis</div>
+        <h1>Know what's wrong<br><em>before you pay.</em></h1>
+        <p class="hero-text">Describe your car problem, add a photo or video, and get a clear breakdown of possible causes, urgency, and what to ask your mechanic.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="document.querySelector('#diagnose').scrollIntoView({behavior:'smooth'})">Diagnose My Car <b>→</b></button>
+          <a class="secondary" href="#how">See how it works</a>
+        </div>
+        <div class="trust-row">
+          <div><strong>Free</strong><span>to start</span></div>
+          <div><strong>Clear</strong><span>plain-English results</span></div>
+          <div><strong>Private</strong><span>your info stays yours</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-top"><span>FIXITPROOF ANALYSIS</span><span class="live-dot">● LIVE</span></div>
+        <div class="car-icon">⌁</div>
+        <h3>What is your car doing?</h3>
+        <p>Example: “My 2018 Sonata shakes when braking and the steering wheel vibrates.”</p>
+        <div class="mini-result">
+          <div><span class="pulse"></span><b>Possible issue detected</b></div>
+          <small>Brake system • Medium urgency</small>
+        </div>
+        <div class="skeleton"><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="diagnose" id="diagnose">
+      <div class="section-heading">
+        <div class="eyebrow"><span></span> Start here</div>
+        <h2>Tell us what your car is doing.</h2>
+        <p>The more detail you provide, the more useful the analysis can be.</p>
+      </div>
+      <div class="diagnose-grid">
+        <form id="diagnosisForm" class="form-card">
+          <div class="progress"><span></span></div>
+          <div class="field-row">
+            <label>Year <select id="year" required><option value="">Year</option></select></label>
+            <label>Make <input id="make" required placeholder="e.g. Hyundai"></label>
+            <label>Model <input id="model" required placeholder="e.g. Sonata"></label>
+          </div>
+          <label class="field">What problem are you having?
+            <textarea id="problem" required placeholder="Describe the noise, warning light, vibration, smell, starting issue, or anything else you've noticed..."></textarea>
+          </label>
+          <label class="upload">
+            <input type="file" id="media" accept="image/*,video/*">
+            <span class="upload-icon">＋</span>
+            <span><b>Add a photo or video</b><small>Optional • JPG, PNG, MP4</small></span>
+          </label>
+          <button class="primary full" type="submit">Analyze My Problem <b>→</b></button>
+          <p class="disclaimer">FixItProof provides informational analysis, not a guaranteed diagnosis. Safety-critical problems should be inspected by a qualified professional.</p>
+        </form>
+
+        <div class="side-info">
+          <div class="info-card">
+            <span class="number">01</span><h3>Possible causes</h3><p>Understand what could be causing the symptoms.</p>
+          </div>
+          <div class="info-card">
+            <span class="number">02</span><h3>Urgency</h3><p>See whether the problem may require immediate attention.</p>
+          </div>
+          <div class="info-card">
+            <span class="number">03</span><h3>Next steps</h3><p>Know what to check and what questions to ask a shop.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="result" class="result-card hidden"></div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="section-heading center">
+        <div class="eyebrow"><span></span> Simple process</div>
+        <h2>From symptom to next step.</h2>
+      </div>
+      <div class="steps">
+        <article><div class="step-num">1</div><h3>Describe</h3><p>Tell FixItProof what your car is doing in your own words.</p></article>
+        <article><div class="step-num">2</div><h3>Analyze</h3><p>Review possible causes, urgency, and repair considerations.</p></article>
+        <article><div class="step-num">3</div><h3>Act</h3><p>Use the report to decide what to inspect, ask, or repair next.</p></article>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature-main">
+        <div class="eyebrow"><span></span> Built for real drivers</div>
+        <h2>Less guessing.<br>More confidence.</h2>
+        <p>Car problems are confusing. FixItProof turns complicated symptoms into information you can actually use.</p>
+      </div>
+      <div class="feature-list">
+        <div><b>01</b><span><strong>Plain-English analysis</strong><small>No mechanic vocabulary required.</small></span></div>
+        <div><b>02</b><span><strong>Repair cost guidance</strong><small>Understand what a repair may involve.</small></span></div>
+        <div><b>03</b><span><strong>Shop-ready reports</strong><small>Take your findings with you.</small></span></div>
+        <div><b>04</b><span><strong>Parts & tools</strong><small>Find relevant products when appropriate.</small></span></div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <div class="section-heading center">
+        <div class="eyebrow"><span></span> Coming soon</div>
+        <h2>Choose how much help you need.</h2>
+        <p>Start free. Upgrade when you need deeper analysis and reports.</p>
+      </div>
+      <div class="plans">
+        <div class="plan"><span>FREE</span><h3>Quick Check</h3><strong>$0</strong><p>Basic problem analysis and next steps.</p><button class="outline" onclick="document.querySelector('#diagnose').scrollIntoView({behavior:'smooth'})">Start Free</button></div>
+        <div class="plan featured"><div class="popular">MOST POPULAR</div><span>PLUS</span><h3>FixItProof Plus</h3><strong>$7.99<small>/mo</small></strong><p>Deeper reports, saved vehicles, and advanced guidance.</p><button class="primary full">Join Waitlist</button></div>
+        <div class="plan"><span>REPORT</span><h3>Shop Report</h3><strong>$4.99</strong><p>A clean downloadable report to bring to a repair shop.</p><button class="outline">Coming Soon</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">✓</span><span>FixIt<span>Proof</span></span></div>
+    <p>Understand the problem. Know your next step.</p>
+    <small>© 2026 FixItProof. For informational purposes only.</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
